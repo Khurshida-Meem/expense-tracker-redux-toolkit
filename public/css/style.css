@@ -120,6 +120,10 @@ label {
     background-color: #4338ca;
 }
 
+.error{
+    color: red;
+}
+
 .expense {
     background-color: #e6425e;
 }
@@ -163,7 +167,6 @@ label {
 }
 
 .cancel_edit {
-    display: none;
     margin-top: 10px;
     background-color: #e6425e !important;
 }
