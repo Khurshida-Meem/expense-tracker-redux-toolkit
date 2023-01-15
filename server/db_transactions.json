@@ -5,6 +5,12 @@
       "type": "income",
       "amount": 10000,
       "id": 3
+    },
+    {
+      "name": "some expense",
+      "type": "expense",
+      "amount": 5000,
+      "id": 4
     }
   ]
 }
