@@ -40,6 +40,7 @@ const Tranjactions = () => {
 
       <div className="conatiner_of_list_of_transactions">
         <ul>{content}</ul>
+        <p className="">View More</p>
       </div>
     </>
   );
