@@ -7,6 +7,8 @@ const initialState = {
   isError: false,
   error: "",
   editing:{},
+  search: "",
+  filter: '',
 };
 
 

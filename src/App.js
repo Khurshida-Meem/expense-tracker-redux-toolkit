@@ -24,7 +24,7 @@ function App() {
               </Layout>
             }
           />
-          <Route path="/all-transactions" element={<AllTransactions />} />
+          <Route path="/all-transactions" element={<Layout><AllTransactions /></Layout>} />
         </Routes>
       </Router>
     </>

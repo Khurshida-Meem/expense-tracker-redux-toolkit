@@ -11,6 +11,60 @@
       "type": "expense",
       "amount": 5000,
       "id": 4
+    },
+    {
+      "name": "income",
+      "type": "income",
+      "amount": 12345,
+      "id": 5
+    },
+    {
+      "name": "expense",
+      "type": "expense",
+      "amount": 12345,
+      "id": 6
+    },
+    {
+      "name": "income pro",
+      "type": "income",
+      "amount": 234456,
+      "id": 7
+    },
+    {
+      "name": "expense",
+      "amount": "345",
+      "type": "expense",
+      "id": 8
+    },
+    {
+      "name": "expense ultra",
+      "type": "expense",
+      "amount": 123456,
+      "id": 9
+    },
+    {
+      "name": "expense",
+      "type": "expense",
+      "amount": 12,
+      "id": 10
+    },
+    {
+      "name": "something",
+      "type": "expense",
+      "amount": 12,
+      "id": 11
+    },
+    {
+      "name": "new income",
+      "type": "income",
+      "amount": 123,
+      "id": 12
+    },
+    {
+      "name": "brand new income",
+      "type": "income",
+      "amount": 23,
+      "id": 13
     }
   ]
 }

@@ -185,6 +185,18 @@ label {
     overflow-y: auto;
 }
 
+.pointer{
+    cursor: pointer;
+}
+
+.flex{
+    display: flex;
+}
+
+.mt10{
+    margin-top: 10px;
+}
+
 @media (max-width: 450px) {
     .top_card,
     .form {
