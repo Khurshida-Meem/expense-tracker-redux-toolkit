@@ -13,11 +13,14 @@ const filterSlice = createSlice({
       state.search = action.payload;
     },
     selectedType: (state, action) => {
-        state.type = action.payload;
-    }
+      state.type = action.payload;
+    },
+    reset: (state, action) => {
+      state.search = "";
+      state.type = "";
+    },
   },
 });
 
 export default filterSlice.reducer;
-export const { searched, selectedType } =
-  filterSlice.actions;
+export const { searched, selectedType, reset } = filterSlice.actions;

@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {
+  reset,
+  searched,
+  selectedType,
+} from "../../features/filter/filterSlice";
 
 const Filters = () => {
   const [input, setInput] = useState("");
 
-  const { search, type } = useSelector((state) => state.filters);
-
   const [typeIncome, setTypeIncome] = useState("");
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {
-    dispatch()
-  }
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="flex mt10">
         <div className="form-group radio">
           <div className="radio_group">
@@ -23,7 +22,11 @@ const Filters = () => {
               value="income"
               name="type"
               checked={typeIncome === "income"}
-              onChange={(e) => setTypeIncome("income")}
+              onChange={(e) => {
+                e.preventDefault();
+                setTypeIncome("income");
+                dispatch(selectedType("income"));
+              }}
             />
             <label>Income</label>
           </div>
@@ -34,7 +37,11 @@ const Filters = () => {
               name="type"
               placeholder="Expense"
               checked={typeIncome === "expense"}
-              onChange={(e) => setTypeIncome("expense")}
+              onChange={(e) => {
+                e.preventDefault();
+                setTypeIncome("expense");
+                dispatch(selectedType("expense"));
+              }}
             />
             <label>Expense</label>
           </div>
@@ -44,9 +51,25 @@ const Filters = () => {
           name="input"
           placeholder="Search"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => {
+            e.preventDefault();
+            setInput(e.target.value);
+            dispatch(searched(e.target.value));
+          }}
         />
       </div>
+      <button
+      style={{width: "25%"}}
+        className="btn cancel_edit"
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch(reset());
+          setTypeIncome("");
+          setInput("");
+        }}
+      >
+        Reset
+      </button>
     </form>
   );
 };

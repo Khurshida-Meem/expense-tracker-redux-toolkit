@@ -17,7 +17,7 @@ const Tranjactions = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(fetchTransactions());
+    dispatch(fetchTransactions({search: "", type:""}));
   },[dispatch])
 
   let content = null;
@@ -36,6 +36,8 @@ const Tranjactions = () => {
       <Tranjaction key={transaction.id} transaction={transaction} />
     ));
   }
+
+  console.log(transactions)
 
   if (!isLoading && !isError && transactions.length === 0) {
     content = <p>No transactions found</p>;

@@ -62,8 +62,8 @@
     },
     {
       "name": "brand new income",
+      "amount": "267",
       "type": "income",
-      "amount": 23,
       "id": 13
     }
   ]

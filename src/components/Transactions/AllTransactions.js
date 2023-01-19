@@ -1,24 +1,27 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { fetchTransactions } from "../../features/transaction/transactionSlice";
 import Form from "../Form";
 import Filters from "./Filters";
 import Tranjaction from "./Transaction";
 
 const AllTransactions = () => {
-
   const { transactions, isLoading, isError } = useSelector(
     (state) => state.transaction
   );
 
+  const { search, type } = useSelector((state) => state.filters);
 
   const newTransaction = [...transactions];
 
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    dispatch(fetchTransactions());
-  }, [dispatch]);
+    dispatch(fetchTransactions({ search, type }));
+  }, [dispatch, type, search]);
 
   let content = null;
 
@@ -42,6 +45,7 @@ const AllTransactions = () => {
   }
   return (
     <div>
+    <span onClick={() => navigate("/")} className="pointer">Go Back</span>
       <div>
         <Form />
       </div>
